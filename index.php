@@ -1,8 +1,9 @@
 <?php
+ session_start();
  include "model/pdo.php";
  include "model/danhmuc.php";
  include "model/sanpham.php";
-
+ include "model/taikhoan.php";
  include "global.php";
  include "view/header.php";
 
@@ -39,7 +40,48 @@
             $tendm=load_ten_dm($iddm);
             include "view/sanpham.php";
             break;
-     
+
+        case 'dangky':
+            if(isset($_POST['dangky'])&&($_POST['dangky'])){
+                $email = $_POST['email'];
+                $user = $_POST['user'];
+                $pass = $_POST['pass'];
+                insert_taikhoan($email,$user,$pass);
+                $thongbao= "Đăng ký thành công !";
+            }
+            include "view/taikhoan/dangky.php";
+            break;   
+            
+        case 'dangnhap':
+            if(isset($_POST['dangnhap'])&&($_POST['dangnhap'])){
+                $user = $_POST['user'];
+                $pass = $_POST['pass'];
+                $checkuser = checkuser($user,$pass);
+                if(is_array($checkuser)){
+                    $_SESSION['user']=$checkuser;
+                    $thongbao= "Đăng nhập thành công !";
+                }else{ 
+                    $thongbao ="Tài khoản không tồn tại. Vui lòng kiểm tra hoặc đăng ký !";
+                }             
+            }
+            include "view/dangnhap.php";
+            break;
+        case 'thoat':
+            session_unset();
+            include "view/dangnhap.php";
+            break;
+        case 'quenmk':
+            if(isset($_POST['guiemail'])&&($_POST['guiemail'])){
+                $email = $_POST['email'];
+                $checkemail=checkemail($email); 
+                if(is_array($checkemail)){
+                    $thongbao= "Mật khẩu của bạn là: ".$checkemail['pass'];
+                }else{
+                    $thongbao="Email này không tồn tại";
+                }   
+            }
+            include "view/taikhoan/quenmk.php";
+            break;
     default:
         include "view/home.php";
         break;

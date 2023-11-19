@@ -6,13 +6,21 @@
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://unpkg.com/ionicons@5.5.1/dist/css/ionicons.min.css">
+    <style>
+        .giohang-icon a:hover{
+            color: red;
+        }
+        .taikhoan-icon a:hover{
+            color: red;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
         <div class="wrapper">
             <header>
                 <div class="inner-header">
-                    <a href="" class="logo">HCT Sneaker</a>
+                    <a href="index.php" class="logo">HCT Sneaker</a>
                     <nav>
                         <ul id="main-menu">
                             <li><a href="index.php">Trang chủ</a></li>
@@ -24,8 +32,12 @@
                     </nav>
                 </div>
                 <div class="giohang-taikhoan">
-                    <a href="#" class="icon"><ion-icon name="people-outline"></ion-icon></a>
+                    <div class="giohang-icon">
+                    <a href="index.php?act=dangnhap" class="icon"><ion-icon name="people-outline"></ion-icon></a>
+                    </div>
                     <div class="line-icon"></div>
+                    <div class="taikhoan-icon">
                     <a href="#" class="icon"><ion-icon name="bag-outline"></ion-icon></a>
+                    </div>
                 </div>
             </header>

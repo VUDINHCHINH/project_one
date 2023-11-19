@@ -90,3 +90,56 @@
             </div>
      </div>
     </main>
+    <!-- bắt đầu tin tức mới nhất -->
+<div class="tintucmoinhat-title">
+            <h2># Tin mới nhất</h2>
+            <p>Nơi cập nhật những xu hướng thời trang mới nhất cho bạn</p>
+        </div>
+
+    <div class="tintucmoinhat">
+        <div class="tintucmoinhat-left">
+             <div class="tintucmoinhat-img">
+                <img src="img/3.png" alt="" width="580">
+             </div>
+             <div class="tintucmoinhat-content">
+                <h2>Giới trẻ Việt rộ mốt đi dép cá rô phi</h2>
+                <p>22/10/2019</p>
+                <div class="line"></div>
+                <p>Trào lưu của giới trẻ thường bất ngờ xuất hiện mà chẳng cần lý do. <br>
+                    Một bài hát, một câu nói, thậm chí một chiếc áo… cũng có thể trở <br>
+                    thành xu hướng. Mới đây, ảnh chụp đôi dép nhựa màu xanh,...</p>
+             </div>
+        </div>
+
+        <div class="tintucmoinhat-right">
+            <div class="tintucmoinhat-right-top">
+                <div class="tintucmoinhat-content-right">
+                    <img src="img/3.png" alt="" width="250">
+                    <h2>Chọn giày dép lúc nào cũng vừa in chân</h2>
+                    <p>22/10/2019</p>
+                    <div class="line"></div>
+                </div>
+                <div class="tintucmoinhat-content-right">
+                    <img src="img/3.png" alt="" width="250">
+                    <h2>Chọn giày dép lúc nào cũng vừa in chân</h2>
+                    <p>22/10/2019</p>
+                    <div class="line"></div>
+                </div>
+            </div>
+            <div class="tintucmoinhat-right-bottom">
+                <div class="tintucmoinhat-content-right">
+                    <img src="img/3.png" alt="" width="250">
+                    <h2>Chọn giày dép lúc nào cũng vừa in chân</h2>
+                    <p>22/10/2019</p>
+                    <div class="line"></div>
+                </div>
+                <div class="tintucmoinhat-content-right">
+                    <img src="img/3.png" alt="" width="250">
+                    <h2>Chọn giày dép lúc nào cũng vừa in chân</h2>
+                    <p>22/10/2019</p>
+                    <div class="line"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- hết tin tức mới nhất -->

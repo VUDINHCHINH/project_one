@@ -2,6 +2,7 @@
  include "../model/pdo.php";
  include "../model/danhmuc.php";
  include "../model/sanpham.php";
+ include "../model/taikhoan.php";
 
  include "header.php";
  if(isset($_GET['act'])){
@@ -111,6 +112,17 @@
             include "sanpham/list.php";
             break;
 
+            case 'dskh':
+                $listtaikhoan = loadall_taikhoan();
+                include "khachhang/list.php";
+                break;
+            case 'xoatk':
+                if(isset($_GET['id'])&&($_GET['id']>0)){
+                    delete_taikhoan($_GET['id']);
+                }
+                $listtaikhoan = loadall_taikhoan();
+                include "khachhang/list.php";
+                break;
         default:
             include "home.php";
             break;
