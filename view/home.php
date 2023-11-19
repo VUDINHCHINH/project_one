@@ -114,13 +114,13 @@
         <div class="tintucmoinhat-right">
             <div class="tintucmoinhat-right-top">
                 <div class="tintucmoinhat-content-right">
-                    <img src="img/3.png" alt="" width="250">
+                    <img src="img/tinmoi1.jpg" alt="" width="250" height="230">
                     <h2>Chọn giày dép lúc nào cũng vừa in chân</h2>
                     <p>22/10/2019</p>
                     <div class="line"></div>
                 </div>
                 <div class="tintucmoinhat-content-right">
-                    <img src="img/3.png" alt="" width="250">
+                    <img src="img/tinmoi.jpg" alt="" width="250" height="230">
                     <h2>Chọn giày dép lúc nào cũng vừa in chân</h2>
                     <p>22/10/2019</p>
                     <div class="line"></div>
@@ -128,13 +128,13 @@
             </div>
             <div class="tintucmoinhat-right-bottom">
                 <div class="tintucmoinhat-content-right">
-                    <img src="img/3.png" alt="" width="250">
+                    <img src="img/tinmoi1.jpg" alt="" width="250" height="230">
                     <h2>Chọn giày dép lúc nào cũng vừa in chân</h2>
                     <p>22/10/2019</p>
                     <div class="line"></div>
                 </div>
                 <div class="tintucmoinhat-content-right">
-                    <img src="img/3.png" alt="" width="250">
+                    <img src="img/tinmoi.jpg" alt="" width="250" height="230">
                     <h2>Chọn giày dép lúc nào cũng vừa in chân</h2>
                     <p>22/10/2019</p>
                     <div class="line"></div>

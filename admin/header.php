@@ -101,7 +101,7 @@ label{
               <li><a href="index.php?act=dskh">Khách hàng</a></li>
               <li><a href="#">Bình luận</a></li>
               <li><a href="#">Đơn Hàng</a></li>
-              <li><a href="#">Thống kê</a></li>
+              <li><a href="index.php?act=bieudo">Thống kê</a></li>
             </ul>
         </div>
       </header>

@@ -3,6 +3,7 @@
  include "../model/danhmuc.php";
  include "../model/sanpham.php";
  include "../model/taikhoan.php";
+ include "../model/thongke.php";
 
  include "header.php";
  if(isset($_GET['act'])){
@@ -122,6 +123,11 @@
                 }
                 $listtaikhoan = loadall_taikhoan();
                 include "khachhang/list.php";
+                break;
+
+            case 'bieudo':           
+                $dsthongke = load_thongke_sanpham_danhmuc();
+                include "thongke/bieudo.php";             
                 break;
         default:
             include "home.php";
