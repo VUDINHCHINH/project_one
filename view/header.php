@@ -37,7 +37,7 @@
                     </div>
                     <div class="line-icon"></div>
                     <div class="taikhoan-icon">
-                    <a href="#" class="icon"><ion-icon name="bag-outline"></ion-icon></a>
+                    <a href="index.php?act=viewcart" class="icon"><ion-icon name="bag-outline"></ion-icon></a>
                     </div>
                 </div>
             </header>

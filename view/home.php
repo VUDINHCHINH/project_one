@@ -22,7 +22,7 @@
                                        $mr = ($i % 4 == 1 || $i % 4 == 0) ? "" : "mr";
                                    
                                        echo '<div class="box_items ' . $mr . '">
-                                               <img src="' . $hinh . '" alt="" width=200>
+                                       <a href="' . $linksp . '"><img src="' . $hinh . '" alt="" width=200></a>
                                                <div class="sub">
                                                    <h2>' . $name . '</h2>
                                                    <p>' . $price . '</p>
@@ -30,6 +30,15 @@
                                                <div class="content-button">
                                                    <a href="' . $linksp . '"><button>Xem Chi Tiết</button></a>
                                                </div>
+                                               <div class="row btn_addtocart"> 
+                                               <form action="index.php?act=addtocart" method="post">
+                                                <input type="hidden" name="id" value="'.$id.'">
+                                                <input type="hidden" name="name" value="'.$name.'">
+                                                <input type="hidden" name="img" value="'.$img.'">
+                                                <input type="hidden" name="price" value="'.$price.'">
+                                                <input type="submit" name="addtocart" value="Thêm vào giỏ hàng">
+                                               </form>
+                                            </div>
                                                </div>';                                  
                                        $i += 1;                                
                                        // Kiểm tra khi nào bắt đầu hàng mới
@@ -73,7 +82,16 @@
                                                </div>
                                                <div class="content-button">
                                                    <a href="' . $linksp . '"><button>Xem Chi Tiết</button></a>
-                                               </div>
+                                               </div>   
+                                               <div class="row btnaddtocart"> 
+                                               <form action="index.php?act=addtocart" method="post">
+                                                <input type="hidden" name="id" value="'.$id.'">
+                                                <input type="hidden" name="name" value="'.$name.'">
+                                                <input type="hidden" name="img" value="'.$img.'">
+                                                <input type="hidden" name="price" value="'.$price.'">
+                                                <input type="submit" name="addtocart" value="Thêm vào giỏ hàng">
+                                               </form>
+                                            </div>                               
                                                </div>';                                  
                                        $i += 1;                                
                                        // Kiểm tra khi nào bắt đầu hàng mới
