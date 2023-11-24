@@ -225,7 +225,22 @@
                     <button class="plus-btn" onclick="increaseQuantity()">+</button>
                 </div>
                 <div class="themgiohang">
-                    <a href="#"><button class="themgiohang-btn">Thêm vào giỏ hàng</button></a>
+                    <?php    
+                        extract($sp_banchay);
+                        $hinh = $img_path.$img;
+                        $linksp = "index.php?act=sanphamct&idsp=" . $id;
+                        echo '<div>
+                                <div class="row btn_addtocart"> 
+                                <form action="index.php?act=addtocart" method="post">
+                                <input type="hidden" name="id" value="'.$id.'">
+                                <input type="hidden" name="name" value="'.$name.'">
+                                <input type="hidden" name="img" value="'.$img.'">
+                                <input type="hidden" name="price" value="'.$price.'">
+                                <input type="submit" class="themgiohang-btn" name="addtocart" value="Thêm vào giỏ hàng">
+                                </form>
+                                </div>
+                            </div>';                                                            
+                                ?>  
                 </div>
             </div>
             <a href="#"><button class="muangay"><h1>Mua ngay</h1><p>gọi điện xác nhận và giao hàng tận nơi</p></button></a>

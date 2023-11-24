@@ -22,7 +22,7 @@
    <!-- code trong đây -->
         <div class="content-row">
             <div class="title-extra">
-                <p>GIỎ HÀNG > THANH TOÁN > HOÀN TẤT</p>
+                <p><u>GIỎ HÀNG</u > THANH TOÁN > HOÀN TẤT</p>
             </div>
 
             <div class="content-cart">
@@ -88,7 +88,7 @@
                         </div>
                     </div>
                     <div class="bill-discount"> 
-                        <a href="#">TIẾN HÀNH THANH TOÁN</a>
+                        <a href="index.php?act=bill">TIẾN HÀNH THANH TOÁN</a>
                         <form action="">
                             <label for="">Phiếu ưu đãi</label>
                             <hr>

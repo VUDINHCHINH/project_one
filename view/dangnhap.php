@@ -89,11 +89,11 @@ if(isset($_SESSION['user'])){
     <form action="index.php?act=dangnhap" method="POST">
     <div class="username">
     <label class="username-label" for="username">Tên Đăng Nhập</label><br>
-    <input type="text" name="user" id="username">
+    <input type="text" name="user" id="username" required>
     </div>
     <div class="password">
     <label class="password-label" for="password">Mật Khẩu</label><br>
-    <input type="password" name="pass" id="password"><br>
+    <input type="password" name="pass" id="password" required><br>
     </div>
         <br>
     <input type="checkbox" name="">Ghi nhớ tài khoản?

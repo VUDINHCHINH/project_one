@@ -36,9 +36,9 @@
                                                 <input type="hidden" name="name" value="'.$name.'">
                                                 <input type="hidden" name="img" value="'.$img.'">
                                                 <input type="hidden" name="price" value="'.$price.'">
-                                                <input type="submit" name="addtocart" value="Thêm vào giỏ hàng">
+                                                <input class="addcart" type="submit" name="addtocart" value="Thêm vào giỏ hàng">
                                                </form>
-                                            </div>
+                                                </div>
                                                </div>';                                  
                                        $i += 1;                                
                                        // Kiểm tra khi nào bắt đầu hàng mới
@@ -89,7 +89,7 @@
                                                 <input type="hidden" name="name" value="'.$name.'">
                                                 <input type="hidden" name="img" value="'.$img.'">
                                                 <input type="hidden" name="price" value="'.$price.'">
-                                                <input type="submit" name="addtocart" value="Thêm vào giỏ hàng">
+                                                <input class="addcart" type="submit" name="addtocart" value="Thêm vào giỏ hàng">
                                                </form>
                                             </div>                               
                                                </div>';                                  

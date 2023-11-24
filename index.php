@@ -4,6 +4,7 @@
  include "model/danhmuc.php";
  include "model/sanpham.php";
  include "model/taikhoan.php";
+ include "model/cart.php";
  include "global.php";
  include "view/header.php";
 
@@ -11,6 +12,7 @@
  $dsdm = loadall_danhmuc();
  $sp_banchay = loadall_sanpham_banchay();
  $sp_new = loadall_sanpham_new();
+
  if((isset($_GET['act'])) && ($_GET['act'] !="")){
     $act = $_GET['act'];
    switch ($act) {
@@ -110,6 +112,35 @@
         case 'viewcart':
             
             include "view/cart/viewcart.php";
+            break;
+        case 'bill':
+
+            include "view/cart/bill.php";
+                break;
+        case 'billcomfirm':
+            if(isset($_POST['dongydathang'])&&($_POST['dongydathang'])){
+                $name=$_POST['name'];
+                $email=$_POST['email'];
+                $address=$_POST['address'];
+                $tel=$_POST['tel'];
+                $pttt=$_POST['pttt'];
+               
+                $ngaydathang = date('H:i:sA d/m/Y');  
+                $tongdonhang = tongdonhang();
+               //tạo bill
+               $idbill= insert_bill($name,$email,$address,$tel,$pttt,$tongdonhang,$ngaydathang);
+
+               //insert into cart : $SESSION['mycart'] & idbill;
+               foreach($_SESSION['mycart'] as $cart) {
+                    extract($cart);
+                    insert_cart($_SESSION['user']['id'],$cart[0],$cart[2],$cart[1],$cart[3],$cart[4],$cart[5],$idbill);
+               }
+               //xóa cart
+               $_SESSION['cart']= "";
+            }
+            $bill = loadone_bill($idbill);
+            $billct = loadall_cart($idbill);
+            include "view/cart/billcomfirm.php";
             break;
     default:
         include "view/home.php";
