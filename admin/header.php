@@ -100,14 +100,10 @@ label{
               <li><a href="index.php?act=listsp">Hàng hóa</a></li>
               <li><a href="index.php?act=dskh">Khách hàng</a></li>
               <li><a href="#">Bình luận</a></li>
-              <li><a href="#">Đơn Hàng</a></li>
+              <li><a href="index.php?act=listbill">Đơn Hàng</a></li>
               <li><a href="index.php?act=bieudo">Thống kê</a></li>
             </ul>
         </div>
       </header>
-       
- 
-     <!-- END HEADER -->
-
-       
+     <!-- END HEADER --> 
     </div>

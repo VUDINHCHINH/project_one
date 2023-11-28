@@ -20,7 +20,7 @@
             if(isset($_GET['idsp'])&&($_GET['idsp']>0)){
                 $id = $_GET['idsp'];
                 $onesp = loadone_sanpham($id);
-
+                
                 extract($onesp);
                 $sp_cung_loai=load_sanpham_cungloai($id,$iddm);
                 include "view/sanphamct.php";
@@ -119,16 +119,19 @@
                 break;
         case 'billcomfirm':
             if(isset($_POST['dongydathang'])&&($_POST['dongydathang'])){
+                if(isset($_SESSION['user'])) $iduser=$_SESSION['user']['id'];
+                else $id=0;
                 $name=$_POST['name'];
                 $email=$_POST['email'];
                 $address=$_POST['address'];
                 $tel=$_POST['tel'];
                 $pttt=$_POST['pttt'];
-               
-                $ngaydathang = date('H:i:sA d/m/Y');  
+                
+                date_default_timezone_set('Asia/Ho_Chi_Minh');
+                $ngaydathang = date('H:i:sA d/m/Y'); 
                 $tongdonhang = tongdonhang();
                //tạo bill
-               $idbill= insert_bill($name,$email,$address,$tel,$pttt,$tongdonhang,$ngaydathang);
+               $idbill= insert_bill($iduser,$name,$email,$address,$tel,$pttt,$tongdonhang,$ngaydathang);
 
                //insert into cart : $SESSION['mycart'] & idbill;
                foreach($_SESSION['mycart'] as $cart) {
@@ -141,6 +144,10 @@
             $bill = loadone_bill($idbill);
             $billct = loadall_cart($idbill);
             include "view/cart/billcomfirm.php";
+            break;
+        case 'mybill':
+            $listbill = loadall_bill($kyw="",$_SESSION['user']['id']);
+            include "view/cart/mybill.php";
             break;
     default:
         include "view/home.php";

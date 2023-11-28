@@ -47,10 +47,12 @@ function load_ten_dm($iddm){
     }
 }
 function loadall_sanpham_banchay(){
-    $sql = "SELECT * FROM sanpham where 1 order by luotxem desc limit 0,8";
-    $listsanpham =  pdo_query($sql);
+    $sql = "SELECT * FROM sanpham WHERE 1 ORDER BY luotxem DESC LIMIT 0, 8";
+    $listsanpham = pdo_query($sql);
     return $listsanpham;
 }
+
+
 function loadall_sanpham_new(){
     $sql = "SELECT * FROM sanpham where 1 order by id desc limit 0,8";
     $listsanpham =  pdo_query($sql);

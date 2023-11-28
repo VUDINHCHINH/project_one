@@ -3,6 +3,7 @@
  include "../model/danhmuc.php";
  include "../model/sanpham.php";
  include "../model/taikhoan.php";
+ include "../model/cart.php";
  include "../model/thongke.php";
 
  include "header.php";
@@ -128,6 +129,44 @@
             case 'bieudo':           
                 $dsthongke = load_thongke_sanpham_danhmuc();
                 include "thongke/bieudo.php";             
+                break;
+
+            case 'listbill':
+                if(isset($_POST['kyw']) && $_POST['kyw']!=""){
+                    $kyw =$_POST['kyw'];
+                }else{
+                    $kyw ="";
+                }
+                $listbill = loadall_bill($kyw,0);
+                include "bill/listbill.php";
+                break;
+            case 'ttdh':
+                if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                    // Lấy giá trị từ biểu mẫu
+                    $n = $_POST['n'];
+                    // Gọi hàm và thực hiện các xử lý khác nếu cần
+                    $ttdh_value = get_ttdh($n);
+                }
+                include "bill/ttdh.php";
+                break;
+
+            case 'suattdh':
+                if(isset($_GET['id'])&&($_GET['id']>0)){
+                    $dh=loadone_bill($_GET['id']);
+                }
+                include "bill/ttdh.php";
+                break;
+    
+            case 'updatettdh':
+                if(isset($_POST['capnhat-tt']) && ($_POST['capnhat-tt'])){
+                    $id = $_POST['id'];
+                    $n = $_POST['n'];
+                    update_ttdh($id,$n);
+                    $ttdh_value = get_ttdh($n);
+                    $thongbao = "Cập nhật thành công";
+                } 
+                $listbill = loadall_bill("",0);
+                include "bill/listbill.php";
                 break;
         default:
             include "home.php";

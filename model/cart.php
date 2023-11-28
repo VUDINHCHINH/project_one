@@ -34,8 +34,8 @@ function tongdonhang(){
     return $tong;
 }
 
-function insert_bill($name,$email,$address,$tel,$pttt,$tongdonhang,$ngaydathang){
-    $sql = "INSERT INTO bill(bill_name,bill_email,bill_address,bill_tel,bill_pttt,ngaydathang,total) values('$name','$email','$address','$tel','$pttt','$tongdonhang','$ngaydathang')";
+function insert_bill($iduser,$name,$email,$address,$tel,$pttt,$tongdonhang,$ngaydathang){
+    $sql = "INSERT INTO bill(iduser,bill_name,bill_address,bill_tel,bill_email,bill_pttt,ngaydathang,total  ) values('$iduser','$name','$email','$address','$tel','$pttt','$ngaydathang','$tongdonhang')";
     return pdo_execute_return_lastInsertId($sql);
 }
 function insert_cart($iduser,$idpro,$img,$name,$price,$soluong,$thanhtien,$idbill){
@@ -51,19 +51,29 @@ function loadall_cart($idbill){
     $sql = "SELECT * from cart where idbill=".$idbill;
     $cart = pdo_query($sql);
     return $cart;
+}   
+function loadall_cart_count($idbill){
+    $sql = "SELECT * from cart where idbill=".$idbill;
+    $bill = pdo_query($sql);
+    return sizeof($bill);
 }
-
+function loadall_bill($kyw="",$iduser=0){
+    $sql = "SELECT * from bill where 1";
+    if($iduser>0) $sql.=" AND iduser=".$iduser;
+    if($kyw!="") $sql.=" AND id like '%".$kyw."%'";
+    $sql.=" order by id desc";
+    $listbill = pdo_query($sql);
+    return $listbill;
+}
 function bill_chi_tiet($listbill){
     global $img_path;
     $tong = 0;
     $i=0;
     echo '<tr>
         <th></th>
-        <th></th>
+        <th>Hình</th>
         <th>Sản phẩm</th>
-        <th></th>
-        <th></th>
-        <th>Giá</th>
+        <th>Đơn giá</th>
     </tr>';
     foreach ($listbill as $cart) {
         $hinh = $img_path.$cart['img'];
@@ -71,13 +81,36 @@ function bill_chi_tiet($listbill){
         echo '<tr>        
         <td></td>                          
         <td><img src="'.$hinh.'" alt="" width="120px" height="120px"></td>
-        <td colspan="3">'.$cart['name'].'</td>
-        <td>'.$cart['thanhtien'].' VND</td>                               
+        <td>'.$cart['name'].'</td>
+        <td>'.$cart['price'].' VND</td>                          
     </tr>';
     $i+=1;
     }
-    echo '<div style="color: red; font-size:22px">
-        <h2>- Tổng đơn hàng: '.$tong.' VND</h2>
-    </div>';
+    echo ' <tr>          
+        <td colspan="4">Tổng Đơn Hàng</td>                       
+        <td colspan="3">'.$tong.' VND</td>
+        </tr>';
+}
+
+function get_ttdh($n){
+    switch ($n) {
+        case '0':
+            $tt = '<span style="color: red;">Chưa Xác Nhận</span>';
+            break;
+        case '1':
+            $tt = '<span style="color: blue;">Đang giao hàng</span>';
+            break;
+        case '2':
+            $tt = '<span style="color: green;">Hoàn tất</span>';
+            break;
+        default:
+            $tt = '<span style="color: red;">Chưa Xác Nhận</span>';
+            break;
+    }
+    return $tt;
+} 
+function update_ttdh($id,$n){
+    $sql = "update bill set bill_status='".$n."' where id=".$id;
+    pdo_execute($sql);
 }
 ?>

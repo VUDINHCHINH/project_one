@@ -38,9 +38,10 @@
         <h2>Chi tiết đơn hàng:</h2>
         <h3>-Mã đơn hàng : <?= $bill['id']; ?></h3>
         <h3>-Ngày đặt hàng: <?= $bill['ngaydathang']; ?></h3>
+        <h3>-Tổng đơn hàng: <?= $bill['total']; ?> VND</h3>
         <h3>-Phương thức thanh toán: <?= $bill['bill_pttt']; ?></h3>
         <hr class="hr-bottom">
-        <div class="notify-detail-one">
+        <div class="notify-detail-one"> 
         <table>
         <tr>
                 <?php
@@ -72,12 +73,6 @@
         </div>
         
     </div>
-    <hr class="hr-bottom">
-    <div class="notify-status">
-        <h2>Trạng thái</h2>
-        <p>Chưa xác nhận</p>
-    </div>
-
     </div>
     </div>
    <!-- end code trong đây -->

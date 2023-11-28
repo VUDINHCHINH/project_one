@@ -77,7 +77,7 @@ if(isset($_SESSION['user'])){
   <?php } ?>
 
   <li class="form_li1"><a href="index.php?act=thoat">Đăng Xuất</a></li>
-  <li class="form_li1"><a href="#">Trạng Thái Đơn Hàng</a></li>
+  <li class="form_li1"><a href="index.php?act=mybill">Đơn Hàng Của Tôi</a></li>
   <li class="form_li1"><a href="#">Cập Nhập Thông Tin</a></li>
 </div>
 

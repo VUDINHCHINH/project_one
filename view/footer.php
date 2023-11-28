@@ -20,7 +20,7 @@
         <div id="footer">
            <div class="footer-left">
              <div class="footer-logo">
-               <img src="./img/3.png" alt="" />
+               <img src="./img/five Group.jpg" alt="" />
              </div>
              <div class="card_1">
                <h3>CÔNG TY ĐIỆN TỬ FPT SỐ 1 VIỆT NAM</h3>
