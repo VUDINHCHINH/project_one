@@ -7,11 +7,12 @@
     <style>
         .form-dangky{
             text-align: center;
-            border: 1px solid black;
+            border: 1px solid #DCDCDC;
             margin: 200px 500px 50px 500px;
             margin-top: 100px;
             height: 370px;
             border-radius: 20px;
+            background-color: #F8F8FF;
         }
         .box_title{
             margin-top: 10px;
@@ -23,6 +24,7 @@
             width: 300px;
             border-radius: 4px;
             height: 26px;
+            border: 1px solid #DCDCDC;
         }
         .username{
             margin-top: 26px;
@@ -32,11 +34,13 @@
             width: 300px;
             border-radius: 4px;
             height: 26px;
+            border: 1px solid #DCDCDC;
         }
         .password input{
             width: 300px;
             border-radius: 4px;
             height: 26px;
+            border: 1px solid #DCDCDC;
         }
         li a{
             text-decoration: none;

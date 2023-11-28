@@ -311,7 +311,8 @@ ul li a:hover{
     margin-bottom: 10px;
   }
   .content-button button{
-    background-color: rgb(89, 96, 96);
+    border: 1px solid red;
+    background-color: red;
     color: aliceblue;
     width: 140px;
     height: 30px;
@@ -319,13 +320,20 @@ ul li a:hover{
     margin-top: 16px;
   }
   .addcart{
-    background-color: rgb(89, 96, 96);
+    border: 1px solid red;
+    background-color: red;
     color: aliceblue;
     width: 140px;
     height: 30px;
     border-radius: 10px;
     margin-top: 6px;  
     margin-bottom: 4px;
+  }
+  .content-button button:hover{
+    background-color: rgb(198, 38, 38);
+  }
+  .addcart:hover{
+    background-color: rgb(198, 38, 38);
   }
   .content img{
     transition: 1s ease-in-out;
@@ -794,7 +802,8 @@ border:1px #ccc solid;
   height: 384px;
   width: 290px;
   border-radius: 20px;
-  border: 1px solid rgb(193, 182, 182);
+  border: 1px solid #e0e0e6;
+  background-color: #F8F8FF;
 }
 .clear {
   clear: both;
